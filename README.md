@@ -14,17 +14,24 @@ The logfile is in Common Log Format:
 %h %l %u %t \"%r\" %>s %b
 
 Where:
+
 %h is the IP address of the client
+
 %l is identity of the client, or "-" if it's unavailable
+
 %u is username of the client, or "-" if it's unavailable
+
 %t is the time that the server finished processing the request. The format is [day/month/year:hour:minute:second zone]
+
 %r is the request line from the client is given (in double quotes). It contains the method, path, query-string, and protocol or the request.
+
 %>s is the status code that the server sends back to the client. You will see see mostly status codes 200 (OK - The request has succeeded), 304 (Not Modified) and 404 (Not Found). See more information on status codes in W3C.org
+
 %b is the size of the object returned to the client, in bytes. It will be "-" in case of status code 304.
 
 Since the dataset was to large for github (481MB), I created a test_access_log file which include the first 50 lines of the original datasets.
 
-#Question 1: 
+##Question 1: 
 how many hits were made to the page /assets/js/the-associates.js ?
 To answer this question I wrote my_mapper_by_page.py and my_reducer.py. After running them on Hadoop, in part-00000 file I have the the number of hits for each different file on the Web site. For example:
 ……..
@@ -32,7 +39,7 @@ To answer this question I wrote my_mapper_by_page.py and my_reducer.py. After ru
 	2456
 ……..
 
-#Question 2: 
+##Question 2: 
 how many hits were made by the IP address 10.99.99.186 ?
 To answer this question I wrote my_mapper_by_ip.py and I used my_reducer.py. After running them on Hadoop, in part-00000 file I have the the number of hits made by each different IP address. For example:
 ……..
@@ -43,7 +50,7 @@ To answer this question I wrote my_mapper_by_ip.py and I used my_reducer.py. Aft
 
 
 
-#Question 3: 
+##Question 3: 
 what is the most popular file on the website (the file whose path occurs most often in access_log)? The number of occurrences? 
 Since some passes in the log begin with “http://www.the-associates.co.uk”,  I removed this part using regular expression in m my_mapper_by_page2.py and I wrote my_reducer2.py which output only the most popular path and the number of occurrences of this path. 
 
