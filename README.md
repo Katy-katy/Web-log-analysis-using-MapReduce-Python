@@ -34,7 +34,7 @@ Since the dataset was to large for github (481MB), I created a test_access_log f
 ##Question 1: 
 how many hits were made to the page /assets/js/the-associates.js ?
 
-To answer this question I wrote my_mapper_by_page.py and my_reducer.py. After running them on Hadoop, in part-00000 file I have the the number of hits for each different file on the Web site. For example:
+To answer this question I wrote **my_mapper_by_page.py** and **my_reducer.py**. After running them on Hadoop, in part-00000 file I had the the number of hits for each different file on the Web site. For example:
 
 ……..
 
@@ -47,7 +47,7 @@ To answer this question I wrote my_mapper_by_page.py and my_reducer.py. After ru
 ##Question 2: 
 how many hits were made by the IP address 10.99.99.186 ?
 
-To answer this question I wrote my_mapper_by_ip.py and I used my_reducer.py. After running them on Hadoop, in part-00000 file I have the the number of hits made by each different IP address. For example:
+To answer this question I wrote **my_mapper_by_ip.py** and I used **my_reducer.py** which I wrote for the first question. After running them on Hadoop, in part-00000 file I had the the number of hits made by each different IP address. For example:
 
 ……..
 
@@ -63,7 +63,7 @@ To answer this question I wrote my_mapper_by_ip.py and I used my_reducer.py. Aft
 ##Question 3: 
 what is the most popular file on the website (the file whose path occurs most often in access_log)? The number of occurrences? 
 
-Since some passes in the log begin with “http://www.the-associates.co.uk”,  I removed this part using regular expression in m my_mapper_by_page2.py and I wrote my_reducer2.py which output only the most popular path and the number of occurrences of this path. 
+Since some passes in the log begin with “http://www.the-associates.co.uk”,  I removed this part using regular expression in **my_mapper_by_page2.py** and I wrote **my_reducer2.py** which output only the most popular path and the number of occurrences of this path. 
 
 I got:
 
@@ -71,4 +71,4 @@ I got:
  
 	117352
 
-I got the right answer to all questions! 
+I got the right answers to all questions! 
